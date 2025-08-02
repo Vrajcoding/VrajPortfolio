@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap');
 @import "tailwindcss";
 
+:root {
+  --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+}
+
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: #111;
   font-family: "Mozilla Headline";
+  overflow-x: hidden
 }
 .timeline {
     @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
@@ -12,6 +20,7 @@ body {
    .card-border {
     @apply border border-black bg-gray-900;
   }
+  
 .card {
   --start: 0;
   position: relative;

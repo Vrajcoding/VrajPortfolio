@@ -3,13 +3,13 @@ const Navlinks = [
         link:"Home",
         href:"#home"
     },
+     {
+        link:"Project",
+        href:"#project"
+    },
     {
         link:"Skill",
         href:"#skill"
-    },
-    {
-        link:"Project",
-        href:"#project"
     },
     {
         link:"About",

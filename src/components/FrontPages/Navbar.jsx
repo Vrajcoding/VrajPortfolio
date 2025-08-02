@@ -4,7 +4,7 @@ import Particles from "../Background/Particles";
 
 const Navbar = () => {
   return (
-    <header className="navbar fixed top-0 w-full text-white flex justify-between items-center">
+    <header className="navbar fixed top-0 w-full text-white flex justify-between items-center bg-black overflow-hidden">
       {/* Name part */}
       <div className="name p-3">
         <a href="#home" className="text-lg md:text-2xl">
