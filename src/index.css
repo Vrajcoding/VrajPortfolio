@@ -10,6 +10,7 @@ html{
 }
 body {
   background-color: #111;
+  color: white;
   font-family: "Mozilla Headline";
   overflow-x: hidden
 }
@@ -63,7 +64,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   filter: blur(10px);
-  filter: saturate(200);
+  filter: saturate(100);
 }
 
 .card:hover::before {

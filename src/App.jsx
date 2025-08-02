@@ -3,9 +3,9 @@ import Navbar from './components/FrontPages/Navbar';
 import Particles from './components/Background/Particles';
 import Name from './components/FrontPages/Name';
 import Projects from './components/Projects/Projects';
+import Project from './Constants/project';
 
 const App = () => {
-  const index = 0;
   return (
     <>
    <div className="relative bg-black ">
@@ -30,8 +30,8 @@ const App = () => {
   </section>
 
 
-  <section className="w-full bg-black h-screen" id='project'>
-    <Projects index={index}/>
+  <section className="w-full bg-black h-fit" id='project'>
+    <Projects data={Project}/>
   </section>
 </div>
 
