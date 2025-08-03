@@ -4,39 +4,44 @@ import Particles from './components/Background/Particles';
 import Name from './components/FrontPages/Name';
 import Projects from './components/Projects/Projects';
 import Project from './Constants/project';
+import Skill from './components/Skills/skill';
+import Skills from './Constants/skill';
 
 const App = () => {
   return (
-    <>
-   <div className="relative bg-black ">
-  {/* 🔴 Particle Background (stays fixed) */}
-  <div className="absolute w-full h-screen z-0">
-    <Particles 
-      particleColors={['#ffffff', '#ffffff']}
-      particleCount={200}
-      particleSpread={10}
-      speed={0.10}
-      particleBaseSize={50}
-      moveParticlesOnHover={false}
-      alphaParticles={false}
-      disableRotation={false}
-    />
-  </div>
+    <div className="relative bg-black text-white">
+      {/* 🔴 Particle Background (behind all content) */}
+      <div className="fixed top-0 left-0 w-full h-full z-0">
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={50}
+          moveParticlesOnHover={false}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
 
-  {/* ✅ Navbar + Name (fullscreen content on top) */}
-  <section className="w-full h-screen flex flex-col items-center justify-center" id="home">
-    <Navbar />
-    <Name />
-  </section>
+      {/* ✅ Navbar + Name Section */}
+      <section
+        className="w-full h-screen flex flex-col items-center justify-center"
+        id="home"
+      >
+        <Navbar />
+        <Name />
+      </section>
 
-
-  <section className="w-full bg-black h-fit" id='project'>
-    <Projects data={Project}/>
-  </section>
-</div>
-
-
-    </>
+      {/* ✅ Projects Section (auto height) */}
+      <section className="relative z-10 w-full py-10 bg-black" id="project">
+        <Projects data={Project} />
+      </section>
+      
+      <section className="relative z-10 w-full py-10 bg-black" id="skill">
+        <Skill skills={Skills} />
+      </section>
+    </div>
   );
 };
 

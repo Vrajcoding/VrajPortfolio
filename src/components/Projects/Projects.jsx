@@ -18,7 +18,7 @@ const Projects = ({ data }) => {
   };
 
   return (
-<section className="px-6 md:px-20 w-full py-10 text-center">
+<section className="px-6 md:px-20 w-full py-10 text-center border-t-1 border-b-2 border-white">
   <h1 className="text-2xl md:text-4xl font-bold mt-10">Projects</h1>
   <p className="font-light text-gray-400 mb-10">
     Amazing and Wonderful Projects
@@ -32,37 +32,37 @@ const Projects = ({ data }) => {
         onMouseMove={handleMouseMove(i)}
         className="card card-border rounded-xl p-6 text-white w-full relative overflow-hidden"
       >
-        <div className="glow" />
+        <div className="glow absolute inset-0 z-0" />
         <div className="relative">
         <h2 className="text-xl font-semibold mt-4 md:text-left">{project.name}</h2>
           <img
             src={project.photos}
             alt={project.name}
-            className="my-4 w-full max-w-md max-h-40 object-cover rounded-lg"
+            className="mx-auto my-4 w-full max-w-md max-h-40 object-cover rounded-lg hover:-translate-y-2 transition-transform duration-300"
           />
          
           <p className="mt-2 text-sm text-gray-300">{project.Desc}</p>
 
-          <div className="flex gap-4 mt-4 justify-center">
-            <a
-              href={project.gitrepo}
-              target="_blank"
-              className="text-blue-400 underline"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            {project.Livelink && (
-              <a
-                href={project.Livelink}
-                target="_blank"
-                className="text-green-400 underline"
-                rel="noreferrer"
-              >
-                Live
-              </a>
-            )}
-          </div>
+         <div className="flex gap-4 mt-4 justify-center">
+  <a
+    href={project.gitrepo}
+    target="_blank"
+    rel="noreferrer"
+    className="bg-white text-black font-medium px-4 py-1.5 rounded-full shadow hover:scale-105 transition-transform duration-300"
+  >
+    GitHub
+  </a>
+  {project.Livelink && (
+    <a
+      href={project.Livelink}
+      target="_blank"
+      rel="noreferrer"
+      className="bg-green-500 text-white font-medium px-4 py-1.5 rounded-full shadow hover:bg-green-600 transition-colors duration-300"
+    >
+      Live
+    </a>
+  )}
+</div>
         </div>
       </div>
     ))}
