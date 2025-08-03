@@ -4,13 +4,13 @@ import Particles from './components/Background/Particles';
 import Name from './components/FrontPages/Name';
 import Projects from './components/Projects/Projects';
 import Project from './Constants/project';
-import Skill from './components/Skills/skill';
+import Skill from './components/Skills/Skill';
 import Skills from './Constants/skill';
 
 const App = () => {
   return (
     <div className="relative bg-black text-white">
-      {/* 🔴 Particle Background (behind all content) */}
+     
       <div className="fixed top-0 left-0 w-full h-full z-0">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
