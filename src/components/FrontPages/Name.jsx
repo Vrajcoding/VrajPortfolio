@@ -1,15 +1,36 @@
+import React, { useRef } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { TypeAnimation } from 'react-type-animation';
 
 const Name = () => {
-  return (
-    <div className="text-white flex flex-col items-center justify-center text-center px-4 h-screen">
-        {/* This is a Heading */}
-     <h1 className='text-3xl md:text-5xl text-white mb-5'>Hi, I am Vraj Gajjar</h1>
+  const scope = useRef();
 
-     {/* typing animation */}
-      <p className="text-xl md:text-2xl font-bold leading-snug text-gray-400">
+  useGSAP(() => {
+    gsap.from('.heading', { y: -50, opacity: 0, duration: 1 });
+    gsap.from('.typing', { y: 30, opacity: 0, duration: 1, delay: 0.5 });
+    gsap.from('.explore-btn', {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.7)',
+      delay: 1,
+    });
+  }, { scope });
+
+  return (
+    <div
+      ref={scope}
+      className="text-white flex flex-col items-center justify-center text-center px-4 h-screen"
+    >
+      {/* Heading */}
+      <h1 className="heading text-3xl md:text-5xl mb-5">Hi, I am Vraj Gajjar</h1>
+
+      {/* Typing Animation */}
+      <p className="typing text-xl md:text-2xl font-bold leading-snug text-gray-400">
         Building performant full-stack
-        <br /> apps with{' '}
+        <br />
+        apps with{' '}
         <TypeAnimation
           sequence={[
             'MongoDB', 1500,
@@ -24,14 +45,11 @@ const Name = () => {
           repeat={Infinity}
         />
       </p>
-      {/* contact part */}
-      <a
-        className="mt-6 px-6 py-2 bg-white focus:scale-110 text-black rounded-md shadow-md transition duration-300 font-bold cursor-pointer"
-        href='#project'
-      >
-        Explore More ↓
-      </a>
-      
+
+      {/* Contact Button */}
+      <a href="#project" className="explore-btn mt-6 px-6 py-2 bg-white text-black rounded-md shadow-md font-bold">
+  Explore More ↓
+</a>
     </div>
   );
 };
