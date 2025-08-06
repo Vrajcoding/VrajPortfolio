@@ -40,7 +40,7 @@ const Projects = ({ data }) => {
         trigger: scope.current,
         start: "top 80%",
         end:"bottom 20%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none reverse",
       },
       y: 50,
       opacity: 0,

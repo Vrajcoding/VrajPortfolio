@@ -4,8 +4,9 @@ import Particles from './components/Background/Particles';
 import Name from './components/FrontPages/Name';
 import Projects from './components/Projects/Projects';
 import Project from './Constants/project';
-import Skill from './components/Skills/Skill';
+import Skill from './components/Skills/skill';
 import Skills from './Constants/skill';
+import About from './components/About/About';
 
 const App = () => {
   return (
@@ -40,6 +41,10 @@ const App = () => {
       
       <section className="relative z-10 w-full py-10 bg-black" id="skill">
         <Skill skills={Skills} />
+      </section>
+
+      <section className="relative z-10 w-full py-10 bg-black" id="about">
+       <About />
       </section>
     </div>
   );

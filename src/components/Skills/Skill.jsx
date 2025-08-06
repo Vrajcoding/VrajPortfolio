@@ -15,7 +15,7 @@ const Skill = ({ skills }) => {
       scrollTrigger: {
         trigger: scope.current,
         start: "top 90%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none reverse",
       },
       y: -50,
       opacity: 0,
@@ -28,7 +28,7 @@ const Skill = ({ skills }) => {
       scrollTrigger: {
         trigger: scope.current,
         start: "top 85%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none reverse",
       },
       y: -30,
       opacity: 0,
@@ -42,7 +42,7 @@ const Skill = ({ skills }) => {
         scrollTrigger: {
           trigger: card,
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
         y: 50,
         opacity: 0,
