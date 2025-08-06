@@ -7,6 +7,7 @@ import Project from './Constants/project';
 import Skill from "./components/Skills/Skill"
 import Skills from './Constants/skill';
 import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 const App = () => {
   return (
@@ -39,13 +40,17 @@ const App = () => {
         <Projects data={Project} />
       </section>
       
-      <section className="relative z-10 w-full py-10 bg-black" id="skill">
+      <section className="relative z-10 w-full py-10 bg-black border-t-2 border-white" id="skill">
         <Skill skills={Skills} />
       </section>
 
-      <section className="relative z-10 w-full py-10 bg-black" id="about">
+      <section className="relative z-10 w-full py-10 bg-black border-t-2 border-white" id="about">
        <About />
       </section>
+
+       {/* <section className="relative z-10 w-full py-10 bg-black" id="contact">
+       <Contact />
+      </section> */}
     </div>
   );
 };

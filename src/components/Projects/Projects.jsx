@@ -78,7 +78,7 @@ const Projects = ({ data }) => {
     <section
       ref={scope}
       id="project"
-      className="px-6 md:px-20 w-full py-10 text-center border-t border-b border-white"
+      className="px-6 md:px-20 w-full py-10 text-center border-t  border-white"
     >
       {/* Title */}
       <h1 className="project-title text-2xl md:text-4xl font-bold mt-10">

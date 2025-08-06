@@ -5,13 +5,13 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Icons (using react-icons)
-import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { 
   SiExpress, 
   SiMongodb,  
   SiTailwindcss,
   SiRedux,
-  SiJavascript
+  SiTypescript
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -61,23 +61,15 @@ const Skills = () => {
 
   const skillCategories = [
     {
-  name: "Frontend",
-  skills: [
-    { 
-      name: "React", icon: <FaReact className="text-cyan-400" />, level: 95 
+      name: "Frontend",
+      skills: [
+        { name: "React", icon: <FaReact className="text-cyan-400" />, level: 95 },
+        { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, level: 85 },
+        { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: 85 },
+        { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-300" />, level: 90 }
+      ],
+      color: "from-cyan-500/10 to-cyan-900/10"
     },
-    { 
-      name: "Bootstrap", icon: <FaBootstrap className="text-purple-500" />, level: 85 
-    },
-    { 
-      name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-300" />, level: 90 
-    },
-    { 
-      name: "EJS",  icon: <SiJavascript className="text-yellow-400" />, level: 80 
-    }
-  ],
-  color: "from-cyan-500/10 to-cyan-900/10"
-},
     {
       name: "Backend",
       skills: [
@@ -108,7 +100,7 @@ const Skills = () => {
         Technologies I work with daily and continue to master
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skillCategories.map((category, categoryIndex) => (
           <div 
             key={categoryIndex}
@@ -149,6 +141,23 @@ const Skills = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Additional Tech Stack */}
+      <div className="mt-16 text-center">
+        <h4 className="text-xl font-medium mb-6">Also experienced with:</h4>
+        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          {['JavaScript', 'HTML5', 'CSS3', 'SASS', 'Jest', 'Webpack', 'Firebase', 'JWT', 'OAuth', 'WebSockets'].map((tech, i) => (
+            <motion.span
+              key={i}
+              className="px-4 py-2 bg-gray-800/50 rounded-full text-sm border border-gray-700"
+              whileHover={{ y: -3 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
       </div>
     </section>
   );

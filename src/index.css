@@ -70,3 +70,16 @@ body {
 .card:hover::before {
   opacity: 1;
 }
+
+/* Cube Styles */
+.cube-container {
+  perspective: 1000px;
+}
+.cube {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+}
+.cube-face {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
