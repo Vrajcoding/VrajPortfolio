@@ -9,14 +9,18 @@ const Projects = ({ data }) => {
   const scope = useRef();
   const cardRef = useRef([]);
 
-
   useGSAP(() => {
+  
+    const isMobile = window.innerWidth < 768;
+    
+    
     gsap.from(".project-title", {
       scrollTrigger: {
         trigger: scope.current,
-        start: "top 90%",
+        start: isMobile ? "top 85%" : "top 90%",
+        toggleActions: "play none none reverse",
       },
-      y: -50,
+      y: isMobile ? -30 : -50,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
@@ -26,30 +30,36 @@ const Projects = ({ data }) => {
     gsap.from(".project-subtitle", {
       scrollTrigger: {
         trigger: scope.current,
-        start: "top 85%",
+        start: isMobile ? "top 80%" : "top 85%",
+        toggleActions: "play none none reverse",
       },
-      y: -30,
+      y: isMobile ? -20 : -30,
       opacity: 0,
       duration: 1,
       delay: 0.2,
       ease: "power3.out",
     });
 
+    
     gsap.from(cardRef.current, {
       scrollTrigger: {
         trigger: scope.current,
-        start: "top 80%",
-        end:"bottom 20%",
+        start: isMobile ? "top 75%" : "top 80%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
-      y: 50,
+      y: isMobile ? 30 : 50,
       opacity: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: isMobile ? 0.8 : 1,
+      stagger: isMobile ? 0.1 : 0.2,
       ease: "power3.out",
     });
-  }, { scope });
 
+    
+    // return () => {
+    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    // };
+  }, { scope });
 
   const handleMouseMove = (i) => (e) => {
     const card = cardRef.current[i];

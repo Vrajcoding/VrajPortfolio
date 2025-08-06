@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,48 +9,65 @@ gsap.registerPlugin(ScrollTrigger);
 const Skill = ({ skills }) => {
   const scope = useRef();
   const cardRefs = useRef([]);
+  const containerRef = useRef();
 
   useGSAP(() => {
+    // Responsive animation adjustments
+    const isMobile = window.innerWidth < 768;
+    const cardStagger = isMobile ? 0.05 : 0.1;
+    const cardStart = isMobile ? "top 80%" : "top 85%";
+    const titleStart = isMobile ? "top 85%" : "top 90%";
+
+    // Title animation with responsive settings
     gsap.from(".skill-title", {
       scrollTrigger: {
         trigger: scope.current,
-        start: "top 90%",
+        start: titleStart,
         toggleActions: "play none none reverse",
+        markers: false, // Enable for debugging
       },
-      y: -50,
+      y: isMobile ? -30 : -50,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
     });
 
-    
+    // Description animation with responsive settings
     gsap.from(".skill-para", {
       scrollTrigger: {
         trigger: scope.current,
-        start: "top 85%",
+        start: titleStart,
         toggleActions: "play none none reverse",
       },
-      y: -30,
+      y: isMobile ? -20 : -30,
       opacity: 0,
       duration: 1,
       delay: 0.2,
       ease: "power3.out",
     });
 
+    // Cards animation with responsive stagger and start position
     cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      
       gsap.from(card, {
         scrollTrigger: {
-          trigger: card,
-          start: "top 90%",
+          trigger: containerRef.current,
+          start: cardStart,
           toggleActions: "play none none reverse",
         },
-        y: 50,
+        y: isMobile ? 30 : 50,
         opacity: 0,
         duration: 0.8,
-        delay: i * 0.1,
+        delay: i * cardStagger,
         ease: "power2.out",
       });
     });
+
+    // Cleanup ScrollTriggers on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, { scope });
 
   return (
@@ -60,7 +77,7 @@ const Skill = ({ skills }) => {
         Tools and Technologies I Use
       </p>
 
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+      <div ref={containerRef} className="grid md:grid-cols-2 grid-cols-1 gap-6">
         {skills.map((skill, idx) => (
           <div
             key={idx}
