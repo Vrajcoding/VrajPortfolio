@@ -25,4 +25,10 @@ const Skill = [
   },
 ];
 
+const skill = [
+  {
+    
+  }
+]
+
 export default Skill;

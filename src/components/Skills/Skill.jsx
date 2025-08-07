@@ -10,7 +10,6 @@ import {
   SiExpress, 
   SiMongodb,  
   SiTailwindcss,
-  SiRedux,
   SiJavascript
 } from "react-icons/si";
 
@@ -20,7 +19,7 @@ const Skills = () => {
   const scope = useRef();
   const categoryRefs = useRef([]);
 
-  // Animation setup
+
   useGSAP(() => {
     gsap.from(".skills-title", {
       scrollTrigger: {

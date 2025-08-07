@@ -3,19 +3,17 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Icons (install react-icons or use your own)
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
+import Skillslider from "./Skillslider";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const scope = useRef();
-  const cubeRef = useRef();
 
-  // 3D Cube Animation
+ 
   useGSAP(() => {
     gsap.from(".about-text", {
       scrollTrigger: {
@@ -38,16 +36,6 @@ const About = () => {
       duration: 1,
       ease: "back.out",
     });
-
-    // Cube rotation on hover
-    // const cube = cubeRef.current;
-    // if (cube) {
-    //   cube.addEventListener("mousemove", (e) => {
-    //     const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    //     const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    //     cube.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    //   });
-    // }
   }, { scope });
 
   return (
@@ -87,12 +75,16 @@ const About = () => {
             "I don't just write code - I solve problems through clean architecture and intuitive user experiences."
           </motion.p>
         </div>
+        <div className="Skill-show">
+        <Skillslider />
       </div>
+      </div>
+      
     </section>
   );
 };
 
-// Component for Tech Badges
+
 const TechBadge = ({ icon, name }) => (
   <motion.div
     whileHover={{ y: -5, scale: 1.05 }}

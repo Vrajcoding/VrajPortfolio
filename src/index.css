@@ -83,3 +83,7 @@ body {
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
+
+.opacity {
+  background-color: black
+}

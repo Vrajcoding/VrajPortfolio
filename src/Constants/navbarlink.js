@@ -1,10 +1,6 @@
 const Navlinks = [
-    {
-        link:"Home",
-        href:"#home"
-    },
      {
-        link:"Project",
+        link:"Work",
         href:"#project"
     },
     {
@@ -14,6 +10,10 @@ const Navlinks = [
     {
         link:"About",
         href:"#about"
+    },
+    {
+       link:"Experience",
+       href:"#experience"
     }
 ]
 
