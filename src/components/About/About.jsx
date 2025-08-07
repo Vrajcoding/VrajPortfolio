@@ -9,9 +9,10 @@ import Skillslider from "./Skillslider";
 
 
 gsap.registerPlugin(ScrollTrigger);
-
+const isMobile = window.innerWidth < 768;
 const About = () => {
   const scope = useRef();
+  const card = useRef();
 
  
   useGSAP(() => {
@@ -36,6 +37,17 @@ const About = () => {
       duration: 1,
       ease: "back.out",
     });
+
+    gsap.from(".Skill-show", {
+      scrollTrigger:{
+        trigger:card.current,
+        start:"top 70%",
+      },
+      opacity:0,
+      x:100,
+      duration:1,
+      ease:"back.out"
+    })
   }, { scope });
 
   return (
@@ -75,7 +87,7 @@ const About = () => {
             "I don't just write code - I solve problems through clean architecture and intuitive user experiences."
           </motion.p>
         </div>
-        <div className="Skill-show">
+        <div className="Skill-show overflow-hidden" ref={card}>
         <Skillslider />
       </div>
       </div>

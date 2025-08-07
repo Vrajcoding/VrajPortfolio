@@ -48,17 +48,13 @@ const Projects = ({ data }) => {
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
-      y: isMobile ? 30 : 50,
+      y: isMobile ? 300 : 500,
       opacity: 0,
       duration: isMobile ? 0.8 : 1,
       stagger: isMobile ? 0.1 : 0.2,
       ease: "power3.out",
     });
 
-    
-    // return () => {
-    //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    // };
   }, { scope });
 
   const handleMouseMove = (i) => (e) => {
