@@ -47,7 +47,7 @@ const Name = () => {
       </p>
 
       {/* Contact Button */}
-      <a href="#project" className="explore-btn mt-6 px-6 py-2 bg-white text-black rounded-md shadow-md font-bold">
+      <a href="#about" className="explore-btn mt-6 px-6 py-2 bg-white text-black rounded-md shadow-md font-bold">
   Explore More ↓
 </a>
     </div>

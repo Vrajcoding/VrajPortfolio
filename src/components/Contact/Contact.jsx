@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+gsap.registerPlugin(ScrollTrigger);
+const isMobile = window.innerWidth < 768;
 const Contact = () => {
+ const card = useRef();
 
+ useGSAP(() => {
+   gsap.from(".contact-section",{
+    scrollTrigger: {
+        trigger: card.current,
+        start: isMobile ? "top 70%" : "top 60%",
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+   })
+ })
   const [formdata, setformdata] = useState({
     name : "",
     email:"",
@@ -18,10 +37,9 @@ const Contact = () => {
   }
   const handleonSubmit = (e) => {
       e.preventDefault();
-      
   }
   return (
-    <section className="px-6 md:px-20 py-20 w-full max-w-7xl mx-auto">
+    <section className="px-6 md:px-20 py-20 w-full max-w-7xl mx-auto contact-section" ref={card}>
       <h2 className="skills-title text-3xl md:text-4xl font-bold text-center mb-8">
         Contact <span className="text-blue-500">Us</span>
       </h2>
