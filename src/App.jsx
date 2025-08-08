@@ -11,7 +11,7 @@ import Contact from './components/Contact/Contact'
 
 const App = () => {
   return (
-    <div className="relative bg-black text-white">
+    <div className="relative bg-black text-white overflow-x-hidden">
      
       <div className="fixed top-0 left-0 w-full h-full z-0">
         <Particles

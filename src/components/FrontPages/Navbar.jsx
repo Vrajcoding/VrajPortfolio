@@ -26,7 +26,7 @@ const Navbar = () => {
       className="navbar fixed top-0 w-full text-white flex justify-between items-center bg-black z-[999]"
     >
       {/* Name */}
-      <div className="name p-3">
+      <div className="name p-5">
         <a href="#home" className="text-lg md:text-2xl">
           Vraj
         </a>
@@ -47,7 +47,7 @@ const Navbar = () => {
       </nav>
 
       {/* Contact Button */}
-      <div className="p-3 contact">
+      <div className="p-5 contact">
         <a
           href="#contact"
           className="px-7 py-2 rounded-md bg-white text-black shadow-md hover:shadow-lg focus:scale-110 transition-transform duration-100 ease-in-out font-bold"
