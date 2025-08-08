@@ -1,4 +1,12 @@
 const Navlinks = [
+    {
+        link:"Home",
+        href:"#home"
+    },
+     {
+        link:"About",
+        href:"#about"
+    },
      {
         link:"Work",
         href:"#project"
@@ -7,14 +15,6 @@ const Navlinks = [
         link:"Skill",
         href:"#skill"
     },
-    {
-        link:"About",
-        href:"#about"
-    },
-    {
-       link:"Experience",
-       href:"#experience"
-    }
 ]
 
 export default Navlinks;

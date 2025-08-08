@@ -7,7 +7,7 @@ import Project from './Constants/project';
 import Skill from "./components/Skills/Skill"
 import Skills from './Constants/skill';
 import About from './components/About/About';
-import Contact from './components/Contact/Contact';
+import Contact from './components/Contact/Contact'
 
 const App = () => {
   return (
@@ -36,6 +36,10 @@ const App = () => {
       </section>
 
       {/* ✅ Projects Section (auto height) */}
+      <section className="relative z-10 w-full py-10 bg-black border-t-2 border-white" id="about">
+       <About />
+      </section>
+
       <section className="relative z-10 w-full py-10 bg-black" id="project">
         <Projects data={Project} />
       </section>
@@ -44,13 +48,10 @@ const App = () => {
         <Skill skills={Skills} />
       </section>
 
-      <section className="relative z-10 w-full py-10 bg-black border-t-2 border-white" id="about">
-       <About />
-      </section>
 
-       {/* <section className="relative z-10 w-full py-10 bg-black" id="contact">
+       <section className="relative z-10 w-full py-10 bg-black  border-t-2 border-white" id="contact">
        <Contact />
-      </section> */}
+      </section>
     </div>
   );
 };
